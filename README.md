@@ -1,1 +1,1 @@
-# developer_entry_task
+# anwsers for the sinergise python developer entry task
