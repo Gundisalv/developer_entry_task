@@ -17,10 +17,10 @@ Be sure to also install the python-dev libraries and pip.
 
 ### Installing
 
-To run the program we will need the libraries that are listed on requierments.txt
+To run the program we will need the libraries that are listed on requirements.txt
 to install them do
 ```
-pip install -r requierments.txt
+pip install -r requirements.txt
 ```
 
 ## Running
@@ -30,11 +30,11 @@ To run the full program just write
 ```
 python developer_entry_task.py
 ```
-it will print some selected examples for each of the functions requiered on the
+it will print some selected examples for each of the functions required on the
 test, with their respective execution time and also the optimized versions of
 the same functions.
 
-### Run by fucntion
+### Run by function
 
 To run specific tests for each function you must give them as arguments.
 
@@ -54,7 +54,7 @@ function. It will also be provided a list of posible values for the arguments.
 
 ## Authors
 
-* **Gonzalo Quiroga** - *Initial work* - [PurpleBooth](https://github.com/Gundisalv)
+* **Gonzalo Quiroga** - *Initial work* - [Gundisalv](https://github.com/Gundisalv)
 
 ## Acknowledgments
 
