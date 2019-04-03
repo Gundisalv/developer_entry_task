@@ -25,7 +25,7 @@ pip install -r requierments.txt
 
 ## Running
 
-To run the full program justo write
+To run the full program just write
 
 ```
 python developer_entry_task.py
