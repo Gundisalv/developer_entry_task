@@ -8,4 +8,7 @@
 *.tif
 
 #Ignore log files
-*.log*
+*log*
+
+#Ignore pycache
+*pycache*
