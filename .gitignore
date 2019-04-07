@@ -1,2 +1,5 @@
 #Ignore test files
 *test*.py
+
+#Ignore env file
+*.env

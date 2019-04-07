@@ -10,6 +10,8 @@ if os.path.exists('config.env'):
         if len(var) == 2:
             os.environ[var[0]] = var[1].replace("\"", "")
 
+if not os.path.exists('./shub_downloads'):
+    os.mkdir('shub_downloads')
 
 class Config:
     SENTINEL_INSTANCE_ID = os.environ.get('SENTINEL_HUB_ID') or False
