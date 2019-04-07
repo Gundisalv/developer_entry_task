@@ -5,7 +5,7 @@
 *.env
 
 #Ignore tif files
-*.tif
+*.tif*
 
 #Ignore log files
 *log*
