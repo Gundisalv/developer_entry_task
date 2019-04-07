@@ -3,3 +3,9 @@
 
 #Ignore env file
 *.env
+
+#Ignore tif files
+*.tif
+
+#Ignore log files
+*.log*
