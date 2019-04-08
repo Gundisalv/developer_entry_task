@@ -42,3 +42,28 @@ def find_mins(stats_by_item):
                     abs_min = diff
                     the_pair = (i1, i2)
     return the_pair
+
+
+
+def get_statistics(self, query):
+        try:
+            if isinstance(query, int):
+                polygon = [self.vectors.loc[query].geometry]
+            elif all([isinstance(query, str), query in self.possible_labels]):
+                land_type = self.vectors.loc[self.vectors['LAND_TYPE'] == query]
+                polygon = land_type.dissolve(by='LAND_TYPE').geometry.values[0]
+
+            query_mask = rasterio.features.rasterize(
+                polygon, self.ndvi_img.raster.shape,
+                transform=self.ndvi_img.transform, all_touched=False)
+            ndvi_masked = np.copy(self.ndvi_img.raster)
+            ndvi_masked[query_mask != 1] = np.nan
+
+
+def vect_to_rast(geo_pandas, shub_img):
+    polygons_val = [(
+        r['geometry'], int(str(i+1) + '0' +str(class_val[r['LAND_TYPE']]))
+        ) for i, r in geo_pandas.iterrows()]
+    ras = rasterio.features.rasterize(
+                ((mapping(p),v) for p,v in polygons_val), self.ndvi_img.raster.shape,
+                transform=self.ndvi_img.transform, all_touched=False, out=out_ras)
