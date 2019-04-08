@@ -23,3 +23,4 @@ class Config:
     if not SENTINEL_INSTANCE_ID:
         logger.error('SENTINEL_HUB_ID needed to continue')
         exit(0)
+    RESAMPLE_VAL = 1000000000

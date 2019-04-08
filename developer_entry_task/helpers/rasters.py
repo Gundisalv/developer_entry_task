@@ -94,3 +94,17 @@ class SentinelHubImage():
 def nan_to_no_data(img):
     img[:, :, 0][img[:, :, 1] == 0] = np.nan
     return img[:, :, 0]
+
+
+def get_ndvi(bbox, query_date, eval_script=False):
+    response = GetSentinelHubImages(bbox=bbox, end_date=query_date, maxcc=1,
+                                    eval_script=eval_script, save_data=True,
+                                    to_nan=False)
+    ndvi_array = (response.images[0][:, :, 1]-response.images[0][:, :, 0])/(
+        response.images[0][:, :, 1]+response.images[0][:, :, 0])
+    red_band = SentinelHubImage(
+        response.images[0][:, :, 0], bbox, response.dates_list[0])
+    nir_band = SentinelHubImage(
+        response.images[0][:, :, 1], bbox, response.dates_list[0])
+
+    return SentinelHubImage(ndvi_array, bbox, response.dates_list[0])
