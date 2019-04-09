@@ -31,6 +31,13 @@ to install them do
 pip install -r requirements.txt
 ```
 
+## Set config.env
+
+Config env example:
+
+    [DEFAULT]
+    SENTINEL_HUB_ID=INSET_ID_HERE
+
 
 
 ## Running
