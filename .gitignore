@@ -1,5 +1,5 @@
-#Ignore test files
-*test*.py
+#Ignore vscode
+*.vscode
 
 #Ignore env file
 *.env
